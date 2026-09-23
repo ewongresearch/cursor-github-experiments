@@ -12,9 +12,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run hello experiment
-        run: python experiments/01-hello-github/hello.py
-      - name: Install test deps
-        run: pip install pytest
-      - name: Run tests
-        run: python -m pytest experiments/01-hello-github/test_hello.py -v
+      - run: pip install pytest numpy matplotlib
+      - run: python experiments/01-hello-github/hello.py
+      - run: |
+          python -m pytest experiments/01-hello-github/test_hello.py -v
+          python -m pytest experiments/03-invariance-entropy/test_entropy.py -v
+      - run: python experiments/03-invariance-entropy/plot_entropy.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: invariance-entropy-chart
+          path: docs/

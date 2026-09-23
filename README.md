@@ -1,7 +1,15 @@
 # Cursor + GitHub Experiments
-A small sandbox for testing how Cursor Cloud Agents work with GitHub.
-Hosted on GitHub: https://github.com/ewongresearch/cursor-github-experiments
-## Run locally
-```bash
-python experiments/01-hello-github/hello.py
-python -m pytest experiments/01-hello-github/test_hello.py -v
+Repo: https://github.com/ewongresearch/cursor-github-experiments
+
+| # | Folder | Purpose |
+|---|--------|---------|
+| 01 | experiments/01-hello-github/ | Hello + pytest |
+| 02 | experiments/02-pr-agent/ | @cursor PR notes |
+| 03 | experiments/03-invariance-entropy/ | Invariance entropy + chart |
+
+Run locally:
+pip install pytest numpy matplotlib
+python experiments/03-invariance-entropy/plot_entropy.py
+python -m pytest experiments/ -v
+
+GitHub Pages: https://ewongresearch.github.io/cursor-github-experiments/
